@@ -1,0 +1,14 @@
+﻿@model HomeViewModel
+
+@await Html.PartialAsync("Carousel")
+
+<h2>Preferred items of the week</h2>
+<hr/>
+
+<div class="row marginTop float-left">
+    @foreach (var item in Model.PreferredItems)
+    {
+        @await Html.PartialAsync("ItemSummary", item);
+    }
+</div>
+

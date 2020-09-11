@@ -1,0 +1,28 @@
+﻿@model Item
+
+<div class="col-md-3">
+    <div class="card">
+        <h3 style="height: 75px">
+            <a>@Model.Name</a>
+        </h3>
+        <img class="card-img-top"
+             alt="Thumbnail [100%x225]"
+             style="height: 250px; width: 100%; display: block;"
+             src="@Model.ImageUrl"
+             data-holder-rendered="true">
+        <div class="card-body card-footer">
+            <p class="card-text" style="height: 75px">@Model.ShortDescription</p>
+            <hr/>
+            <h3 class="float-right">@Model.Price.ToString("c")</h3>
+            <a class="btn btn-success btn-sm float-right"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-itemId="@Model.ItemId">Add to Cart
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+

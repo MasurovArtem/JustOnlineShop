@@ -1,0 +1,13 @@
+﻿@model ItemListViewModel
+
+<h2>@Model.CurrentCategory</h2>
+<hr/>
+<div class="row" style="margin-top: 2%">
+    @{
+        foreach (var item in Model.Items)
+        {
+            @await Html.PartialAsync("ItemSummary", item);
+        }
+    }
+</div>
+
